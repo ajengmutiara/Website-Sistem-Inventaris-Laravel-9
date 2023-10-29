@@ -18,6 +18,8 @@
                     <th> Serial Number</th>
                     <th>Kelengkapan Barang</th>
                     <th>Tanggal Penerimaan</th>
+                    <th>Edit</th>
+                    <th>Hapus</th>
 </tr>
 </thead>
 <tbody>
@@ -32,8 +34,14 @@
     <td>{{ $peminjam->merk_barang}}</td>
     <td>{{ $peminjam->serial_number}}</td>
     <td>{{ $peminjam->kelengkapan_barang}}</td>
-    <td>{{ $peminjam->pekerjaan}}</th>
-</tr>
+    <td>{{ $peminjam->tanggal_penerimaan}}</th>
+    <td><a href="{{route('data_peminjam.edit, $peminjam->id)}}" class="btn btn-warning btn-sm">Edit</a></td>
+    <td>
+        <form action="{{ route('data_peminjam.destroy', $peminjam->id) }}" method="POST">
+            @csrf
+            <button class="btn btn-warning btn-sm" onclick="return confirm('Anda yakin menghapus data ini?')">Hapus</button>
+</form>
+        </tr>
 @endforeach
 </tbody>
 </table>

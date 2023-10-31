@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\IndexController@index');
 
 Route::get('home', function(){
     return view('home');
@@ -25,7 +24,7 @@ Route::get('data_peminjam', function(){
 
 Route::get('lihat_data_peminjam', 'App\Http\Controllers\PeminjamController@lihat_data_peminjam');
 
-Route :: group(array('prefix' => 'admin'), function(){
+Route::group(array('prefix' => 'admin'), function(){
     //url ke halaman home
     Route::get('/', function(){
         return 'Halaman Home Admin';
@@ -47,3 +46,7 @@ Route::get('data_peminjam/store', 'App\Http\Controllers\DataPeminjamController@s
 Route::get('data_peminjam/edit/{id}', 'App\Http\Controllers\DataPeminjamController@edit')->name('data_peminjam.edit');
 Route::post('data_peminjam/delete/{id}', 'App\Http\Controllers\DataPeminjamController@destroy')->name('data_peminjam.destroy');
 Route::post('data_peminjam/update/{id}', 'App\Http\Controllers\DataPeminjamController@update')->name('data_peminjam.update');
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+})->middleware(['auth'])->name('dashboard');

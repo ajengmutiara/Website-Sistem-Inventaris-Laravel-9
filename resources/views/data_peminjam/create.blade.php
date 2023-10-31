@@ -2,7 +2,6 @@
 @section('content')
 <div class="container">
     <h4>Tambah Data Penerima</h4>
-
     <form method="POST" action="{{ route('data_peminjam.store') }}">
         @csrf 
         <div class="form-group">

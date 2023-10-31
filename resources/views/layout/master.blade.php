@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE-edge">
-            <meta name="viewport" content="width-device-width, initial-scale-1.0">
-            <title> SIS</tittle>
-            
-        </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Inventaris</title>
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+</head>
 <body>
-        @yield('content')
-        @include('layout.header')
-        @include('layout.navbar')
+    @include('layout.header')
+    @include('layout.navbar')
+    @yield('content')
 
-        <script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
-
+    <script src="{{ asset('js/data_peminjam.js')}}"></script>
+    <script src="{{asset('js./bootstrap.min.js')}}"></script>
 </body>
 </html>

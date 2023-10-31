@@ -33,7 +33,7 @@ class DataPeminjamController extends Controller
     }
 
     public function edit($id){
-        $peinjam =  DataPeminjam::find($id);
+        $peminjam =  DataPeminjam::find($id);
         return view('data_peminjam.edit', compact('peminjam'));
     }
 
